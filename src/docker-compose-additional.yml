@@ -1,1 +1,21 @@
 version: '3.7'
+
+services:
+  # My Game Public Api
+  mygamepublicapi:
+    image: ${REGISTRY:-ows}/mygamepublicapi:${PLATFORM:-linux}-${TAG:-latest}
+    build:
+      context: .
+      dockerfile: MyGamePublicAPI/Dockerfile
+    environment:
+     - OWSStorageConfig__OWSDBBackend=${DATABASE}
+     - OWSStorageConfig__OWSDBConnectionString=${DATABASE_CONNECTION_STRING}
+     - OWSAPIPathConfig__InternalPublicApiURL=${InternalPublicApiURL}
+     - OWSAPIPathConfig__InternalInstanceManagementApiURL=${InternalInstanceManagementApiURL}
+     - OWSAPIPathConfig__InternalCharacterPersistenceApiURL=${InternalCharacterPersistenceApiURL}
+    ports:
+      - "44342:80"
+      - "44343:443"
+    depends_on:
+      - database
+      - messaging

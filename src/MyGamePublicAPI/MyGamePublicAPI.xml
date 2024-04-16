@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyGamePublicAPI</name>
+    </assembly>
+    <members>
+        <member name="T:MyGamePublicAPI.DTOs.ExampleDTO">
+            <summary>
+            Example Data Transfer Object
+            </summary>
+            <remarks>
+            This object is for collecting POST request parameters
+            </remarks>
+        </member>
+        <member name="P:MyGamePublicAPI.DTOs.ExampleDTO.Message">
+            <summary>
+            Message
+            </summary>
+            <remarks>
+            A Example Message
+            </remarks>
+        </member>
+        <member name="T:MyGamePublicAPI.Program">
+            <summary>
+            MyGamePublicAPI Program
+            </summary>
+            <remarks>
+            The program class.
+            </remarks>
+        </member>
+        <member name="M:MyGamePublicAPI.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        </member>
+    </members>
+</doc>
